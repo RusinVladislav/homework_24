@@ -1,0 +1,42 @@
+# Запросы из примеров к домашней работе (файл: data.txt):
+
+# filtr
+GET http://127.0.0.1:5000/perform_query/?cmd1=filter&value1=POST&file_name=data.txt
+
+###
+
+# map
+GET http://127.0.0.1:5000/perform_query/?cmd1=map&value1=0&file_name=data.txt
+
+###
+
+# unique
+GET http://127.0.0.1:5000/perform_query/?cmd1=unique&value1=""&file_name=data.txt
+
+###
+
+# sort
+GET http://127.0.0.1:5000/perform_query/?cmd1=sort&value1=desc&file_name=data.txt
+
+###
+
+# limit
+GET http://127.0.0.1:5000/perform_query/?cmd1=limit&value1=3&file_name=data.txt
+
+# Основные запросы по домашней работе (файл: apache_logs.txt):
+
+###
+
+GET http://127.0.0.1:5000/perform_query/?cmd1=filter&value1=POST&cmd2=map&value2=0&file_name=apache_logs.txt
+
+###
+
+GET http://127.0.0.1:5000/perform_query/?cmd1=map&value1=0&cmd2=unique&value2=""&file_name=apache_logs.txt
+
+###
+
+GET http://127.0.0.1:5000/perform_query/?cmd1=filter&value1=POST&cmd2=limit&value2=5&file_name=apache_logs.txt
+
+### Для выполнения кода из 24 домашки ###
+
+GET http://127.0.0.1:5000/perform_query/?cmd1=regex&value1=images\/\w{1,100}\.png&file_name=apache_logs.txt
