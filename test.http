@@ -1,4 +1,4 @@
-# Запросы из примеров к домашней работе (файл: data.txt):
+# Запросы из примеров к домашней работе #23 (файл: data.txt):
 
 # filtr
 GET http://127.0.0.1:5000/perform_query/?cmd1=filter&value1=POST&file_name=data.txt
@@ -23,7 +23,7 @@ GET http://127.0.0.1:5000/perform_query/?cmd1=sort&value1=desc&file_name=data.tx
 # limit
 GET http://127.0.0.1:5000/perform_query/?cmd1=limit&value1=3&file_name=data.txt
 
-# Основные запросы по домашней работе (файл: apache_logs.txt):
+# Основные запросы по домашней работе #23 (файл: apache_logs.txt):
 
 ###
 
@@ -37,6 +37,20 @@ GET http://127.0.0.1:5000/perform_query/?cmd1=map&value1=0&cmd2=unique&value2=""
 
 GET http://127.0.0.1:5000/perform_query/?cmd1=filter&value1=POST&cmd2=limit&value2=5&file_name=apache_logs.txt
 
-### Для выполнения кода из 24 домашки ###
+# Для проверки запросов из 24 домашки (метод GET и POST для команды regex)
+
+###
 
 GET http://127.0.0.1:5000/perform_query/?cmd1=regex&value1=images\/\w{1,100}\.png&file_name=apache_logs.txt
+
+###
+POST http://127.0.0.1:5000/perform_query
+Content-Type: application/json
+
+{
+    "file_name": "apache_logs.txt",
+    "cmd1": "regex",
+    "value1": "images/\\w+\\.png",
+    "cmd2": "sort",
+    "value2": "asc"
+}
